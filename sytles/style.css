@@ -11,13 +11,15 @@
 body {
     font-family: "Hack Nerd Font", serif;
     background: #2c3444;
+    margin: 0;
+    padding: 0;
+    color: #d8dee9;
 }
 
 .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    color: #d8dee9;
 }
 
 .profile-pic {
@@ -34,7 +36,8 @@ body {
     border: 3px solid #d8dee9;
 }
 
-.intro h1 {
+.intro h1,
+.tools h1 {
     margin-top: 40px;
     margin-bottom: 5px;
 }
@@ -42,17 +45,11 @@ body {
 .intro p {
     line-height: 1.6;
     margin-bottom: 20px;
-    max-width: 800px;
+    max-width: 100%;
     padding: 20px;
     background: #3b4252;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: #d8dee9;
-}
-
-.tools h1 {
-    margin-top: 40px;
-    margin-bottom: 5px;
 }
 
 .icon-tools {
@@ -64,18 +61,6 @@ body {
     width: 50px;
     height: 50px;
     object-fit: cover;
-}
-
-.sidebar {
-    top: 0;
-    left: 0;
-    width: var(--sidebar-width);
-    height: 100%;
-    background: var(--sidebar-bg);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: var(--sidebar-padding-top);
 }
 
 .sidebar {
@@ -104,7 +89,8 @@ body {
     transition: background 0.2s, color 0.2s;
 }
 
-.sidebar-item i, .sidebar-item .icon {
+.sidebar-item i,
+.sidebar-item .icon {
     font-size: 20px;
     margin-bottom: 5px;
 }
@@ -117,4 +103,60 @@ body {
 .sidebar-item.active {
     background: var(--sidebar-active-bg);
     border-radius: 0 8px 8px 0;
+}
+
+@media (max-width: 900px) {
+    .container {
+        padding: 15px;
+        margin-left: var(--sidebar-width);
+    }
+
+    .profile-pic {
+        position: static;
+        margin: 20px auto;
+        display: block;
+        text-align: center;
+    }
+
+    .sidebar {
+        width: 60px;
+        padding-top: 50px;
+    }
+
+    .sidebar-item {
+        font-size: 10px;
+        padding: 10px 0;
+    }
+
+    .icon-tools img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        padding-top: 0;
+        border-right: none;
+        border-bottom: 1px solid #333;
+    }
+
+    .sidebar-item {
+        flex: 1;
+        font-size: 9px;
+        padding: 8px 0;
+    }
+
+    .intro p {
+        padding: 15px;
+    }
 }
