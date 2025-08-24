@@ -75,6 +75,7 @@ body {
     align-items: center;
     padding-top: var(--sidebar-padding-top);
     border-right: 1px solid #333;
+    z-index: 1000; /* sempre por cima */
 }
 
 .sidebar-item {
@@ -105,7 +106,33 @@ body {
     border-radius: 0 8px 8px 0;
 }
 
-@media (max-width: 768px) {
+/* ----------- BREAKPOINTS ----------- */
+
+/* Tablet (768px–1023px) */
+@media (max-width: 1023px) {
+    .sidebar {
+        width: 60px;
+        padding-top: 50px;
+    }
+
+    .sidebar-item {
+        font-size: 10px;
+        padding: 10px 0;
+    }
+
+    .sidebar-item i,
+    .sidebar-item .icon {
+        font-size: 18px;
+    }
+
+    .profile-pic img {
+        width: 130px;
+        height: 130px;
+    }
+}
+
+/* Celular (600px–767px) */
+@media (max-width: 767px) {
     .container {
         max-width: 100%;
         padding: 15px;
@@ -132,9 +159,7 @@ body {
         width: 40px;
         height: 40px;
     }
-}
 
-@media (max-width: 600px) {
     .sidebar {
         position: fixed;
         bottom: 0;
@@ -162,17 +187,18 @@ body {
     }
 
     body {
-        padding-bottom: 60px;
+        padding-bottom: 65px; /* evita que a barra cubra o conteúdo */
     }
 }
 
+/* Celular muito pequeno (≤400px) */
 @media (max-width: 400px) {
     .sidebar-item {
-        display: none;
+        display: none; /* esconde todos */
     }
 
     .sidebar-item.github {
-        display: flex;
+        display: flex; /* mostra só o GitHub */
         justify-content: center;
         flex: 1;
     }
