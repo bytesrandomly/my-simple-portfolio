@@ -1,0 +1,120 @@
+:root {
+    --sidebar-bg: #3b4252;
+    --sidebar-color: #bbb;
+    --sidebar-hover-bg: #222;
+    --sidebar-hover-color: #1E90FF;
+    --sidebar-active-bg: #1E2A47;
+    --sidebar-width: 80px;
+    --sidebar-padding-top: 70px;
+}
+
+body {
+    font-family: "Hack Nerd Font", serif;
+    background: #2c3444;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #d8dee9;
+}
+
+.profile-pic {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+}
+
+.profile-pic img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #d8dee9;
+}
+
+.intro h1 {
+    margin-top: 40px;
+    margin-bottom: 5px;
+}
+
+.intro p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    max-width: 800px;
+    padding: 20px;
+    background: #3b4252;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #d8dee9;
+}
+
+.tools h1 {
+    margin-top: 40px;
+    margin-bottom: 5px;
+}
+
+.icon-tools {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.icon-tools img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.sidebar {
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    height: 100%;
+    background: var(--sidebar-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: var(--sidebar-padding-top);
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    height: 100%;
+    background: var(--sidebar-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: var(--sidebar-padding-top);
+    border-right: 1px solid #333;
+}
+
+.sidebar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--sidebar-color);
+    font-size: 11px;
+    width: 100%;
+    padding: 12px 0;
+    transition: background 0.2s, color 0.2s;
+}
+
+.sidebar-item i, .sidebar-item .icon {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.sidebar-item:is(:hover, .active) {
+    color: var(--sidebar-hover-color);
+    background: var(--sidebar-hover-bg);
+}
+
+.sidebar-item.active {
+    background: var(--sidebar-active-bg);
+    border-radius: 0 8px 8px 0;
+}
